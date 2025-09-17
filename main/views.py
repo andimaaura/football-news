@@ -106,7 +106,7 @@ def register(request):
             messages.success(request, 'Your account has been successfully created!')
             return redirect('main:login')
     context = {'form':form}
-    return render(request, 'register.html', context)
+    return render(request, 'main/register.html', context)
 
 
 def login_user(request):
@@ -124,7 +124,7 @@ def login_user(request):
    else:
       form = AuthenticationForm(request)
    context = {'form': form}
-   return render(request, 'login.html', context)
+   return render(request, 'main/login.html', context)
 
 def logout_user(request):
     logout(request)
